@@ -201,7 +201,7 @@ export default {
       this.$store.commit('changeLoading',true);
       this.$http.post(this.api + 'order/queryOrderInfoList',JSON.stringify(postData))
       .then((res) =>{
-        that.orderList = res.data.data.orderInfoList;
+        that.orderList = that.common.changeImgUrl2(res.data.data.orderInfoList,that.api);
         that.$store.commit('changeLoading',false);
       })
     },

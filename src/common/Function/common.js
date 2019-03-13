@@ -137,6 +137,77 @@ export default{
 		}else{
 			return data;
 		}
+	},
+	changeImgUrl(data,url){
+		var list = [];
+		for(var item of data){
+			if(item.pic0.indexOf("://")<0){
+				item.pic0 = url+ 'product/getPic?fileName='+item.pic0
+			}
+			if(item.pic1.indexOf("://")<0){
+				item.pic1 = url+ 'product/getPic?fileName='+item.pic1
+			}
+			if(item.pic2.indexOf("://")<0){
+				item.pic2 = url+ 'product/getPic?fileName='+item.pic2
+			}
+			list.push(item)
+		}
+		return list;
+
+	},
+	changeImgUrl2(data,url){
+		var list = [];
+		for(var item of data){
+			if(item.productView.pic0.indexOf("://")<0){
+				item.productView.pic0 = url+ 'product/getPic?fileName='+item.productView.pic0
+			}
+			if(item.productView.pic1.indexOf("://")<0){
+				item.productView.pic1 = url+ 'product/getPic?fileName='+item.productView.pic1
+			}
+			if(item.productView.pic2.indexOf("://")<0){
+				item.productView.pic2 = url+ 'product/getPic?fileName='+item.productView.pic2
+			}
+			list.push(item)
+		}
+		return list;
+
+	},
+	getImgUrl(data,url){
+		console.log(data)
+		var list = [];
+		for(var item of data){
+			if(item.img){
+				if(item.img.indexOf("://")<0){
+					item.img = url+ 'product/getPic?fileName='+item.img
+				}
+				list.push(item)
+			}
+		}
+		return list;
+	},
+	setImgUrl(data,url){
+		if(data.pic0.indexOf("://")<0&&data.pic0!=""){
+			data.pic0 = url+ 'product/getPic?fileName='+data.pic0
+		}
+		if(data.pic1.indexOf("://")<0&&data.pic1!=""){
+			data.pic1 = url+ 'product/getPic?fileName='+data.pic1
+		}
+		if(data.pic2.indexOf("://")<0&&data.pic2!=""){
+			data.pic2 = url+ 'product/getPic?fileName='+data.pic2
+		}
+		return data;
+	},
+	setImgUrl2(item,url){
+		if(item.productView.pic0.indexOf("://")<0){
+			item.productView.pic0 = url+ 'product/getPic?fileName='+item.productView.pic0
+		}
+		if(item.productView.pic1.indexOf("://")<0){
+			item.productView.pic1 = url+ 'product/getPic?fileName='+item.productView.pic1
+		}
+		if(item.productView.pic2.indexOf("://")<0){
+			item.productView.pic2 = url+ 'product/getPic?fileName='+item.productView.pic2
+		}
+		return item;
 	}
 
 }

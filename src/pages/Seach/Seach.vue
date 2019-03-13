@@ -103,10 +103,11 @@ export default {
       .then((res) =>{
         if(res.data.resultCode == 0){
           that.productInfoList = [];
-          for( var i = 0; i < res.data.data.productInfoList.length; i++){
-            that.$set (that.productInfoList ,i, res.data.data.productInfoList[i]);
+          var datalist = that.common.changeImgUrl(res.data.data.productInfoList,that.api);
+          for( var i = 0; i < datalist.length; i++){
+            that.$set (that.productInfoList ,i, datalist[i]);
           }
-          if(res.data.data.productInfoList.length < 10){
+          if(datalist.length < 10){
             that.haveMoreProduct = false;
           }else{
             that.haveMoreProduct = true;
@@ -143,10 +144,11 @@ export default {
       .then((res) =>{
         if(res.data.resultCode == 0){
           that.productInfoList = [];
-          for( var i = 0; i < res.data.data.productInfoList.length; i++){
-            that.$set (that.productInfoList ,i, res.data.data.productInfoList[i]);
+          var datalist = that.common.changeImgUrl(res.data.data.productInfoList,that.api);
+          for( var i = 0; i < datalist.length; i++){
+            that.$set (that.productInfoList ,i, datalist[i]);
           }
-          if(res.data.data.productInfoList.length < 10){
+          if(datalist.length < 10){
             that.haveMoreProduct = false;
           }else{
             that.haveMoreProduct = true;
@@ -186,9 +188,10 @@ export default {
           .then((res) =>{
             if(res.data.resultCode == 0){
               if(res.data.data.productInfoList.length > 0){
+                var datalist = that.common.changeImgUrl(res.data.data.productInfoList,that.api);
                 self.pageNum++;
-                for (var i = 0; i < res.data.data.productInfoList.length; i++) {
-                  self.productInfoList.push(res.data.data.productInfoList[i]);
+                for (var i = 0; i < datalist.length; i++) {
+                  self.productInfoList.push(datalist[i]);
                 }
                 if(res.data.data.productInfoList.length < 10){
                   self.haveMoreProduct = false;
@@ -227,7 +230,7 @@ export default {
       this.$http.post(this.api + 'product/productInfoList',JSON.stringify(postData))
       .then((res) =>{
         if(res.data.resultCode == 0){
-          that.productInfoList = res.data.data.productInfoList;
+          that.productInfoList = that.common.changeImgUrl(res.data.data.productInfoList,that.api);
         }
         if(res.data.data.productInfoList.length < 10){
           that.haveMoreProduct = false;

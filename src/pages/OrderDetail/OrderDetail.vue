@@ -139,7 +139,7 @@ export default {
     .then((res) =>{
       console.log(res.data)
       if(res.data.resultCode == 0){
-        that.orderDetail = res.data.data.orderInfo;
+        that.orderDetail = that.common.setImgUrl2(res.data.data.orderInfo,that.api);
       }else{
       }
         that.$store.commit('changeLoading',false);

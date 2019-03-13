@@ -19,7 +19,7 @@
           <input  v-model="password" type="password" name="password" placeholder="请输入密码">
         </div>
         <div class="login-forget-password">
-          <a @click="gotoRetrieve()" class="login-forget-password">{{$t('buttom.forget')}}</a>
+          <a @click="gotoRetrieve()" class="lo 你gin-forget-password">{{$t('buttom.forget')}}</a>
         </div>
         <div class="login-btn-area">
         <!-- <span @click="changeLoginType()" class="login-type">{{loginType}}</span>  -->

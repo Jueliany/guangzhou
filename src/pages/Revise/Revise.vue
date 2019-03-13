@@ -4,7 +4,7 @@
       <router-link class="black-to"  to="/setting">
         <img class="icon-black" src="../../assets/images/My/sp_icon_back.png">
       </router-link>
-      <p class="header-title">{{$t('pages.changePassword')}}</p>
+      <p class="header-title">修改密码</p>
     </div>
     
     <div  class="revise-next">

@@ -128,8 +128,8 @@ export default {
     }
     this.$http.post(this.api + 'product/queryHomePageImg',JSON.stringify(postData))
     .then((res)=> {
-      console.log(res.data)
-      that.swiperList = res.data.data.imgList;
+      that.swiperList = that.common.getImgUrl(res.data.data.imgList,that.api);
+      console.log(that.swiperList)
     })
     let data = {};
     if(this.area !="全部"){
@@ -141,7 +141,7 @@ export default {
     .then(function (response) {
       // console.log(response.data.data.homePage);
       if(response.data.resultCode == 0){
-         that.hotProductList = response.data.data.productInfoList;
+         that.hotProductList = that.common.changeImgUrl(response.data.data.productInfoList,that.api);
       }else{
         that.$store.commit('changeLoading',false);
         this.$toast(response.data.resultMsg,{

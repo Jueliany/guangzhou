@@ -10,12 +10,12 @@
     <!-- 客服电话 -->
     <div class="contact-tel">
       <p>{{$t('title.fwdh')}}：</p>
-      <a href="tel:4009005690">4009005690</a>
+      <a href="tel:4009005690">8008888888</a>
     </div>
     <!-- 客服邮箱 -->
     <div class="contact-mail">
       <p>{{$t('title.kfyx')}}：</p>
-      <a href="mailto:panhanmin@quhappy.com">panhanmin@quhappy.com</a>
+      <a href="mailto:panhanmin@quhappy.com">123456@qq.com</a>
     </div>
   </div>
 </template>

@@ -153,7 +153,7 @@ export default {
     .then((res) => {
       console.log(res.data);
       if(res.data.resultCode == 0){
-        let data = res.data.data.productInfo;
+        let data = that.common.setImgUrl(res.data.data.productInfo,that.api);
         console.log(data.pic0)
         if(data.pic0 != ""){
           that.pictureList.push(data.pic0)
