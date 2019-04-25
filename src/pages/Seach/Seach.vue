@@ -26,7 +26,7 @@
     </nav>   
     <scroller :on-infinite="infinite" ref="product_scroller" class="product_scroller" >
       <ul class="seach-spu-list">
-        <router-link tag="li" v-for="item of productInfoList" :to="'/product/'+item.id" :key="item.id" class="seach-spu-item">
+        <router-link tag="li" v-if="item.status == 1" v-for="item of productInfoList" :to="'/product/'+item.id" :key="item.id" class="seach-spu-item">
           <img :src="item.pic0">
           <div class="seach-spu-info">
             <p class="seach-spu-title">

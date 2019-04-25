@@ -31,7 +31,7 @@ Vue.use(Vuex);
 Vue.component('popup-radio', PopupRadio)
 Vue.component('qrcode', QRCode)  
 Vue.component('datetime', Datetime)   //增加全局时间选择组件
-Vue.prototype.api = "http://192.168.0.188:8080/guang_zhou/"      //接口地址
+Vue.prototype.api = "http://localhost:8080/guang_zhou/"      //接口地址
 Vue.prototype.$http = axios                                      //重定义axios进行ajax请求
 Vue.prototype.$exif = Exif
 Vue.prototype.$moment = moment
