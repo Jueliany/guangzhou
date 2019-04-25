@@ -54,7 +54,7 @@ dev:{ //
 ```
 
 #项目布局
-
+```
 ├── build                                       // webpack配置文件（一般不动）
 ├── config                                      // 项目环境配置
 │   ├── dev.env.js                              // 开发环境接口配置
@@ -99,6 +99,7 @@ dev:{ //
 │   └──  main.js                                // 程序入口文件，加载各种公共组件
 ├── favicon.ico                                 // 图标
 └── index.html                                  // 入口html文件
+```
 .
 
 
